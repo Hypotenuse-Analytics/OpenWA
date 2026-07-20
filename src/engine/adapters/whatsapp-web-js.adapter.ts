@@ -989,8 +989,8 @@ export class WhatsAppWebJsAdapter extends EventEmitter implements IWhatsAppEngin
       mentions?.length ? this.client!.sendMessage(to, text, { mentions }) : this.client!.sendMessage(to, text),
     );
     return {
-      id: msg.id._serialized,
-      timestamp: msg.timestamp,
+      id: msg?.id?._serialized || `unknown_${Date.now()}`,
+      timestamp: msg?.timestamp || Math.floor(Date.now() / 1000),
     };
   }
 
@@ -1044,8 +1044,8 @@ export class WhatsAppWebJsAdapter extends EventEmitter implements IWhatsAppEngin
     );
 
     return {
-      id: msg.id._serialized,
-      timestamp: msg.timestamp,
+      id: msg?.id?._serialized || `unknown_${Date.now()}`,
+      timestamp: msg?.timestamp || Math.floor(Date.now() / 1000),
     };
   }
 
@@ -1148,8 +1148,8 @@ export class WhatsAppWebJsAdapter extends EventEmitter implements IWhatsAppEngin
     });
     const msg = await this.sendResolved(chatId, to => this.client!.sendMessage(to, loc));
     return {
-      id: msg.id._serialized,
-      timestamp: msg.timestamp,
+      id: msg?.id?._serialized || `unknown_${Date.now()}`,
+      timestamp: msg?.timestamp || Math.floor(Date.now() / 1000),
     };
   }
 
@@ -1165,8 +1165,8 @@ export class WhatsAppWebJsAdapter extends EventEmitter implements IWhatsAppEngin
       }),
     );
     return {
-      id: msg.id._serialized,
-      timestamp: msg.timestamp,
+      id: msg?.id?._serialized || `unknown_${Date.now()}`,
+      timestamp: msg?.timestamp || Math.floor(Date.now() / 1000),
     };
   }
 
@@ -1194,8 +1194,8 @@ export class WhatsAppWebJsAdapter extends EventEmitter implements IWhatsAppEngin
       }),
     );
     return {
-      id: msg.id._serialized,
-      timestamp: msg.timestamp,
+      id: msg?.id?._serialized || `unknown_${Date.now()}`,
+      timestamp: msg?.timestamp || Math.floor(Date.now() / 1000),
     };
   }
 
@@ -1216,8 +1216,8 @@ export class WhatsAppWebJsAdapter extends EventEmitter implements IWhatsAppEngin
       this.client!.sendMessage(to, new Poll(poll.name, poll.options, pollOptions)),
     );
     return {
-      id: msg.id._serialized,
-      timestamp: msg.timestamp,
+      id: msg?.id?._serialized || `unknown_${Date.now()}`,
+      timestamp: msg?.timestamp || Math.floor(Date.now() / 1000),
     };
   }
 
@@ -1237,8 +1237,8 @@ export class WhatsAppWebJsAdapter extends EventEmitter implements IWhatsAppEngin
     // accepts an explicit target (#583 R1).
     const msg = await this.sendResolved(chatId, to => quotedMsg.reply(text, to));
     return {
-      id: msg.id._serialized,
-      timestamp: msg.timestamp,
+      id: msg?.id?._serialized || `unknown_${Date.now()}`,
+      timestamp: msg?.timestamp || Math.floor(Date.now() / 1000),
     };
   }
 

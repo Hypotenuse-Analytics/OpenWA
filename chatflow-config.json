@@ -1,0 +1,38 @@
+{
+  "trigger": "",
+  "greeting": "👋 Welcome to Hypotenuse Analytics!\n\n1. About Us\n2. Products\n3. Contact Us\n\nReply with the option number.",
+  "respondInGroups": false,
+  "options": [
+    {
+      "key": "1",
+      "text": "Hypotenuse Analytics is a unified multi-modal AI inference platform that transforms fragmented signals into operational intelligence.",
+      "options": []
+    },
+    {
+      "key": "2",
+      "text": "Our Products:\n\n1. SHM\n2. Surveillance Intelligence Lab\n3. Reality Trust Center\n\nReply with the product number.",
+      "options": [
+        {
+          "key": "1",
+          "text": "🏗️ SHM - AI Structural Health Monitoring\n\n• Sensors\n• Computer Vision\n• Machine Learning\n• Predictive Analytics",
+          "options": []
+        },
+        {
+          "key": "2",
+          "text": "📹 Surveillance Intelligence Lab\n\n• AI Video Analytics\n• Threat Detection\n• Behavior Analysis\n• Cross-camera Correlation",
+          "options": []
+        },
+        {
+          "key": "3",
+          "text": "🔍 Reality Trust Center\n\n• Deepfake Detection\n• Media Verification\n• Authenticity Scoring",
+          "options": []
+        }
+      ]
+    },
+    {
+      "key": "3",
+      "text": "📧 info@hypotenuseanalytics.com\n🌐 https://www.hypotenuseanalytics.com",
+      "options": []
+    }
+  ]
+}

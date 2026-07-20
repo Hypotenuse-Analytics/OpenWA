@@ -44,6 +44,7 @@ services:
     # must match the image/entrypoint. Same convention as the production docker-compose.yml.
     environment:
       - NODE_ENV=${NODE_ENV:-development}
+      - AUTO_START_SESSIONS=${AUTO_START_SESSIONS:-true}
       - PORT=2785
       - HOME=/tmp
       # Chromium reads its home from the passwd entry (no /home/openwa), so it needs writable, existing
@@ -77,6 +78,7 @@ services:
       - WEBHOOK_TIMEOUT=${WEBHOOK_TIMEOUT:-10000}
       - WEBHOOK_MAX_RETRIES=${WEBHOOK_MAX_RETRIES:-3}
       - QUEUE_ENABLED=${QUEUE_ENABLED:-false}
+      - SSRF_ALLOWED_HOSTS=${SSRF_ALLOWED_HOSTS:-}
     volumes:
       - ./data:/app/data
     restart: unless-stopped

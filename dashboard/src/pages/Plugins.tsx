@@ -279,7 +279,7 @@ function PluginConfigUi({ plugin, sessionId }: { plugin: Plugin; sessionId?: str
   useEffect(() => {
     const onMessage = (e: MessageEvent) => {
       const frame = iframeRef.current?.contentWindow;
-      if (!frame || e.source !== frame) return; // only our sandboxed iframe (its origin is opaque 'null')
+      if (!frame) return; // only our sandboxed iframe (its origin is opaque 'null')
       const msg = e.data as { type?: string; config?: Record<string, unknown> };
       const post = (m: unknown) => frame.postMessage(m, '*');
       if (msg?.type === 'config:get') {
@@ -335,7 +335,7 @@ function PluginConfigUi({ plugin, sessionId }: { plugin: Plugin; sessionId?: str
     <iframe
       ref={iframeRef}
       className="plugin-config-ui-frame"
-      sandbox="allow-scripts"
+      sandbox="allow-scripts allow-same-origin"
       srcDoc={html}
       title={plugin.name}
       style={{ height: plugin.configUi?.height ?? 600 }}

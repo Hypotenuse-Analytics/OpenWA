@@ -84,6 +84,7 @@ services:
     environment:
       # Core
       - NODE_ENV=${NODE_ENV:-production}
+      - AUTO_START_SESSIONS=${AUTO_START_SESSIONS:-true}
       # Writable HOME on tmpfs so Chromium's HOME-relative writes don't hit the read_only rootfs
       - HOME=/tmp
       # Chromium resolves its home from the passwd entry (no /home/openwa), ignoring $HOME, so without
