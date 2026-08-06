@@ -182,12 +182,7 @@ PRODUCT_REALITY_TRUST = (
     "layer of certainty.\n\n"
 )
 
-#Pitch Deck
 
-PITCH_DECK_CAPTION = (
-    "*Hypotenuse Analytics — Pitch Deck*\n"
-    "Here's our latest pitch deck for your reference.\n"
-)
 
 WHITE_PAPER_CAPTION = (
     "*Hypotenuse Analytics — Technical White Paper*\n\n"

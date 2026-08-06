@@ -252,6 +252,7 @@ def webhook():
             filename=config.WHITE_PAPER_FILENAME,
             caption="",
         )
+        logging.info("Technical White Paper sent successfully")
 
     return jsonify({"status": "ok"}), 200
 
