@@ -240,12 +240,10 @@ def webhook():
     # from an earlier session (that stage never resets otherwise).
     # Sent AFTER reply_text so the caption text arrives before the file.
     if normalized_body == "6":
-        send_document(
-            chat_id=chat_id,
-            doc_path=config.PITCH_DECK_PATH,
-            filename=config.PITCH_DECK_FILENAME,
-            caption="",
-        )
+        send_reply(
+            chat_id,
+            "You can view and download our latest Hypotenuse Analytics Pitch Deck here📄:\n\nhttps://drive.google.com/file/d/1-Js1y4MY29MoorRxdd_BGNvkHTldGnph/view?usp=sharing"
+    )
 
     if normalized_body == "7":
         send_document(
