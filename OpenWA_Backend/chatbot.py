@@ -66,7 +66,7 @@ def handle_message(text: str, user_state: dict) -> str:
 
     elif normalized == "6":
         user_state["stage"] = "pitch_deck"
-        return config.PITCH_DECK_CAPTION
+        return ""
     
     elif normalized == "7":
         user_state["stage"] = "technical_whitepaper"
